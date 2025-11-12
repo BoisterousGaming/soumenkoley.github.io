@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Your Name — Game Programmer</title>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --bg:#0f1724; --card:#0b1220; --muted:#9aa4b2; --accent:#7dd3fc;
+    --glass: rgba(255,255,255,0.03);
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:linear-gradient(180deg,#071024 0%, #071830 100%); color:#e6eef7; -webkit-font-smoothing:antialiased;}
+  .container{max-width:1000px;margin:36px auto;padding:28px;}
+  header{display:flex;gap:20px;align-items:center}
+  .avatar{width:110px;height:110px;border-radius:12px;overflow:hidden;flex:0 0 110px;border:2px solid rgba(255,255,255,0.06);background:var(--glass)}
+  .avatar img{width:100%;height:100%;object-fit:cover;display:block}
+  .intro h1{margin:0;font-size:28px}
+  .intro p.role{margin:6px 0 14px;color:var(--accent);font-weight:600}
+  .intro p.blurb{color:var(--muted);margin:0;max-width:72ch;line-height:1.5}
+  .btn-contact{display:inline-block;margin-top:12px;padding:8px 14px;border-radius:10px;background:linear-gradient(90deg,var(--accent),#60a5fa);color:#032033;text-decoration:none;font-weight:700}
+
+  /* sections */
+  section{margin-top:28px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.0)); padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+  h2{margin:0 0 12px 0;font-size:18px}
+  .timeline{display:flex;flex-direction:column;gap:12px}
+  .job{padding:12px;border-radius:8px;background:rgba(255,255,255,0.01)}
+  .job h3{margin:0;font-size:15px}
+  .job .meta{color:var(--muted);margin-top:6px;font-size:13px}
+
+  /* projects grid */
+  .projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+  .card{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));padding:12px;border-radius:10px}
+  .card img{width:100%;height:120px;object-fit:cover;border-radius:8px}
+  .card h4{margin:10px 0 6px 0;font-size:14px}
+  .links{display:flex;gap:6px;flex-wrap:wrap}
+  .link{font-size:13px;color:var(--accent);text-decoration:none;padding:6px 8px;border-radius:8px;background:rgba(125,211,252,0.06)}
+
+  /* skills */
+  .skills{display:flex;gap:10px;flex-wrap:wrap}
+  .chip{background:rgba(255,255,255,0.02);padding:8px 10px;border-radius:999px;color:var(--muted);font-size:13px}
+
+  footer{margin-top:20px;color:var(--muted);font-size:13px;display:flex;justify-content:space-between;align-items:center}
+  @media (max-width:700px){
+    header{flex-direction:row; align-items:flex-start}
+    .intro p.blurb{font-size:14px}
+    .avatar{width:86px;height:86px;flex:0 0 86px}
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="avatar"><img src="profile.jpg" alt="Profile"></div>
+      <div class="intro">
+        <h1>Your Name</h1>
+        <p class="role">Game Programmer (Unity)</p>
+        <p class="blurb">Results-oriented game programmer with X+ years experience in Unity and C#. I specialise in gameplay systems, optimization and multiplayer integrations.</p>
+        <a class="btn-contact" href="mailto:your.email@example.com">Contact Me</a>
+      </div>
+    </header>
+
+    <section id="experience">
+      <h2>Experience</h2>
+      <div class="timeline">
+        <div class="job">
+          <h3>Company — Senior Game Developer</h3>
+          <div class="meta">Feb 2024 - Present • Bengaluru</div>
+          <p style="color:var(--muted);margin-top:8px">• Short bullets describing responsibilities and achievements. Use 2–4 bullets.</p>
+        </div>
+
+        <div class="job">
+          <h3>Previous Company — Game Developer</h3>
+          <div class="meta">Nov 2021 - Jan 2024</div>
+          <p style="color:var(--muted);margin-top:8px">• Bullet describing what you built and impact.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="projects">
+        <div class="card">
+          <img src="thumb1.jpg" alt="">
+          <h4>Puzzles & Cats</h4>
+          <div class="links">
+            <a class="link" href="#">Android</a>
+            <a class="link" href="#">iOS</a>
+            <a class="link" href="#">Video</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="thumb2.jpg" alt="">
+          <h4>Text & Fly</h4>
+          <div class="links">
+            <a class="link" href="#">Android</a>
+            <a class="link" href="#">iOS</a>
+            <a class="link" href="#">Video</a>
+          </div>
+        </div>
+
+        <!-- add more project cards -->
+      </div>
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+      <div class="job">
+        <h3>Bachelor of Technology — HEC, Kurukshetra University</h3>
+        <div class="meta">2012 - 2016</div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <div style="margin-bottom:8px;color:var(--muted)">Programming Languages</div>
+      <div class="skills">
+        <div class="chip">C#</div>
+        <div class="chip">C++</div>
+        <div class="chip">HLSL</div>
+      </div>
+
+      <div style="margin-top:12px;margin-bottom:8px;color:var(--muted)">Game Engines & Tools</div>
+      <div class="skills">
+        <div class="chip">Unity</div>
+        <div class="chip">Unreal</div>
+        <div class="chip">Photon</div>
+        <div class="chip">PlayFab</div>
+      </div>
+    </section>
+
+    <footer>
+      <div>© Your Name. All Rights Reserved.</div>
+      <div>Email: your.email@example.com | Phone: +91 9XXXXXXXXX</div>
+    </footer>
+  </div>
+
+  <script>
+    // Small behaviour: smooth scroll for hash links (if you later add nav)
+    (function(){ if('scrollBehavior' in document.documentElement.style) return; window.addEventListener('hashchange',()=>{ const el=document.querySelector(location.hash); if(el) el.scrollIntoView({behavior:'smooth'}); }); })();
+  </script>
+</body>
+</html>
