@@ -33,14 +33,84 @@
   .job h3{margin:0;font-size:15px}
   .job .meta{color:var(--muted);margin-top:6px;font-size:13px}
 
-  /* projects grid */
-  .projects{display: grid;grid-template-columns: repeat(2, 1fr);gap: 20px;}
-  @media (max-width: 700px) {.projects {grid-template-columns: 1fr;}}
-  .card{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));padding:12px;border-radius:10px}
-  .card img{width:100%;height:120px;object-fit:cover;border-radius:8px}
-  .card h4{margin:10px 0 6px 0;font-size:14px}
-  .links{display:flex;gap:6px;flex-wrap:wrap}
-  .link{font-size:13px;color:var(--accent);text-decoration:none;padding:6px 8px;border-radius:8px;background:rgba(125,211,252,0.06)}
+  /* projects grid: 2 columns desktop, 1 column mobile */
+  .projects{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  @media (max-width: 700px) {
+    .projects { grid-template-columns: 1fr; }
+  }
+
+  /* card layout: image square, buttons top-right, name below */
+  .card{
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    padding: 12px;
+    border-radius: 10px;
+    position: relative;          /* for absolute .links */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow: hidden;
+  }
+
+  .card img{
+    width: 100%;
+    aspect-ratio: 1 / 1;        /* force square */
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+    transition: transform 0.28s ease;
+    will-change: transform;
+  }
+
+  .card img:hover {
+    transform: scale(1.03);
+  }
+
+  /* links (buttons) placed at top-right over the image */
+  .card .links{
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    z-index: 5;
+  }
+
+  .card .link{
+    font-size: 12px;
+    color: #032033;
+    text-decoration: none;
+    padding: 6px 10px;
+    border-radius: 8px;
+    background: rgba(125, 211, 252, 0.95);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .card .link:focus,
+  .card .link:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.32);
+  }
+
+  /* project title below image */
+  .card h4{
+    margin: 6px 0 0 0;
+    font-size: 14px;
+    color: #e6eef7;
+    line-height: 1.2;
+  }
+
+  /* if a card has multiple small links, wrap them in a row under the title for mobile */
+  @media (max-width: 420px) {
+    .card .links{ top: 10px; right: 10px; gap: 6px; }
+    .card .link{ padding: 6px 8px; font-size: 12px; }
+  }
 
   /* skills */
   .skills{display:flex;gap:10px;flex-wrap:wrap}
@@ -53,21 +123,11 @@
     .avatar{width:86px;height:86px;flex:0 0 86px}
   }
 
-  #experience {
-    background: rgba(125, 211, 252, 0.05); /* Light bluish tint */
-  }
-  
-  #projects {
-    background: rgba(255, 255, 255, 0.03); /* Soft white overlay */
-  }
-  
-  #education {
-    background: rgba(255, 200, 150, 0.05); /* Warm orange tint */
-  }
-  
-  #skills {
-    background: rgba(100, 255, 200, 0.05); /* Mint green tint */
-  }
+  /* section background tints */
+  #experience { background: rgba(125, 211, 252, 0.05); }
+  #projects   { background: rgba(255, 255, 255, 0.03); }
+  #education  { background: rgba(255, 200, 150, 0.05); }
+  #skills     { background: rgba(100, 255, 200, 0.05); }
 </style>
 </head>
 <body>
@@ -158,80 +218,79 @@
       <h2>Projects</h2>
       <div class="projects">
         <div class="card">
-          <img src="thumb2.jpg" alt="">
+          <img src="thumb2.jpg" alt="Bingo Skill thumbnail">
+          <div class="links">
+            <a class="link" href="https://drive.google.com/file/d/1XIkqZ3U3-_9PHpi6VaM2J4YI6aTm-m36/view?usp=sharing" target="_blank" rel="noopener">Video</a>
+          </div>
           <h4>Bingo Skill</h4>
-          <div class="links">
-            <a class="link" href="https://drive.google.com/file/d/1XIkqZ3U3-_9PHpi6VaM2J4YI6aTm-m36/view?usp=sharing">Video</a>
-          </div>
         </div>
-        
+
         <div class="card">
-          <img src="thumb2.jpg" alt="">
+          <img src="thumb2.jpg" alt="Solitaire thumbnail">
+          <div class="links">
+            <a class="link" href="https://drive.google.com/file/d/1AJY-BH5q6JsiREXWZj_w2Vyk0gD5BiM8/view?usp=sharing" target="_blank" rel="noopener">Video</a>
+          </div>
           <h4>Solitaire</h4>
-          <div class="links">
-            <a class="link" href="https://drive.google.com/file/d/1AJY-BH5q6JsiREXWZj_w2Vyk0gD5BiM8/view?usp=sharing">Video</a>
-          </div>
         </div>
 
         <div class="card">
-          <img src="thumb2.jpg" alt="">
+          <img src="thumb2.jpg" alt="Block Puzzle thumbnail">
+          <div class="links">
+            <a class="link" href="https://drive.google.com/file/d/1oc_CF9U9j4fLvbdqacrnFqiQNUlMHhqk/view?usp=sharing" target="_blank" rel="noopener">Video</a>
+          </div>
           <h4>Block Puzzle</h4>
-          <div class="links">
-            <a class="link" href="https://drive.google.com/file/d/1oc_CF9U9j4fLvbdqacrnFqiQNUlMHhqk/view?usp=sharing">Video</a>
-          </div>
         </div>
 
         <div class="card">
-          <img src="thumb2.jpg" alt="">
+          <img src="thumb2.jpg" alt="cARscan thumbnail">
+          <div class="links">
+            <a class="link" href="https://play.google.com/store/apps/details?id=com.carscan.live" target="_blank" rel="noopener">Android</a>
+            <a class="link" href="https://apps.apple.com/us/app/carscan/id1505977655" target="_blank" rel="noopener">iOS</a>
+          </div>
           <h4>cARscan</h4>
-          <div class="links">
-            <a class="link" href="https://play.google.com/store/apps/details?id=com.carscan.live">Android</a>
-            <a class="link" href="https://apps.apple.com/us/app/carscan/id1505977655">iOS</a>
-          </div>
         </div>
-        
+
         <div class="card">
-          <img src="thumb1.jpg" alt="">
+          <img src="thumb1.jpg" alt="Stephen Sharer's Rocket Slide thumbnail">
+          <div class="links">
+            <a class="link" href="https://play.google.com/store/apps/details?id=com.bbtv.stephensharer" target="_blank" rel="noopener">Android</a>
+            <a class="link" href="https://apps.apple.com/us/app/stephen-sharers-rocket-slide/id1510623930" target="_blank" rel="noopener">iOS</a>
+          </div>
           <h4>Stephen Sharer’s Rocket Slide</h4>
-          <div class="links">
-            <a class="link" href="https://play.google.com/store/apps/details?id=com.bbtv.stephensharer">Android</a>
-            <a class="link" href="https://apps.apple.com/us/app/stephen-sharers-rocket-slide/id1510623930">iOS</a>
-          </div>
         </div>
 
         <div class="card">
-          <img src="thumb2.jpg" alt="">
+          <img src="thumb2.jpg" alt="Pizza Maker thumbnail">
+          <div class="links">
+            <a class="link" href="https://www.amazon.com/Pizza-Maker-Kids-Pizzeria-educational/dp/B071FCJZFY/" target="_blank" rel="noopener">Amazon</a>
+          </div>
           <h4>Pizza Maker Kids Pizzeria</h4>
-          <div class="links">
-            <a class="link" href="https://www.amazon.com/Pizza-Maker-Kids-Pizzeria-educational/dp/B071FCJZFY/">Amazon</a>
-          </div>
         </div>
 
         <div class="card">
-          <img src="thumb2.jpg" alt="">
+          <img src="thumb2.jpg" alt="Bow Hunter thumbnail">
+          <div class="links">
+            <a class="link" href="https://play.google.com/store/apps/details?id=com.ient.bowhunter2017" target="_blank" rel="noopener">Android</a>
+          </div>
           <h4>Bow Hunter</h4>
-          <div class="links">
-            <a class="link" href="https://play.google.com/store/apps/details?id=com.ient.bowhunter2017">Android</a>
-          </div>
         </div>
 
         <div class="card">
-          <img src="thumb2.jpg" alt="">
+          <img src="thumb2.jpg" alt="DEVIL'S EYES thumbnail">
+          <div class="links">
+            <a class="link" href="https://apps.apple.com/us/app/zombie-hunter-left-to-survive/id1464059998" target="_blank" rel="noopener">iOS</a>
+          </div>
           <h4>DEVIL'S EYES</h4>
-          <div class="links">
-            <a class="link" href="https://apps.apple.com/us/app/zombie-hunter-left-to-survive/id1464059998">iOS</a>
-          </div>
         </div>
 
         <div class="card">
-          <img src="thumb2.jpg" alt="">
-          <h4>Let's Go See</h4>
+          <img src="thumb2.jpg" alt="Let's Go See thumbnail">
           <div class="links">
-            <a class="link" href="https://apps.apple.com/us/app/lets-go-see-kids-ar-game/id1536127623">iOS</a>
+            <a class="link" href="https://apps.apple.com/us/app/lets-go-see-kids-ar-game/id1536127623" target="_blank" rel="noopener">iOS</a>
           </div>
+          <h4>Let's Go See</h4>
         </div>
 
-        <!-- add more project cards -->
       </div>
     </section>
 
