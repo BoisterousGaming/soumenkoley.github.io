@@ -34,7 +34,8 @@
   .job .meta{color:var(--muted);margin-top:6px;font-size:13px}
 
   /* projects grid */
-  .projects {display: grid;grid-template-columns: repeat(2, 1fr);gap: 20px;}
+  .projects{display: grid;grid-template-columns: repeat(2, 1fr);gap: 20px;}
+  @media (max-width: 700px) {.projects {grid-template-columns: 1fr;}}
   .card{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));padding:12px;border-radius:10px}
   .card img{width:100%;height:120px;object-fit:cover;border-radius:8px}
   .card h4{margin:10px 0 6px 0;font-size:14px}
@@ -147,8 +148,7 @@
             <a class="link" href="https://drive.google.com/file/d/1XIkqZ3U3-_9PHpi6VaM2J4YI6aTm-m36/view?usp=sharing">Video</a>
           </div>
         </div>
-
-        <div class="projects">
+        
         <div class="card">
           <img src="thumb2.jpg" alt="">
           <h4>Solitaire</h4>
@@ -157,7 +157,6 @@
           </div>
         </div>
 
-        <div class="projects">
         <div class="card">
           <img src="thumb2.jpg" alt="">
           <h4>Block Puzzle</h4>
@@ -166,7 +165,6 @@
           </div>
         </div>
 
-        <div class="projects">
         <div class="card">
           <img src="thumb2.jpg" alt="">
           <h4>cARscan</h4>
