@@ -18,9 +18,21 @@
   body{margin:0;background:linear-gradient(180deg,#071024 0%, #071830 100%); color:#e6eef7; -webkit-font-smoothing:antialiased;}
   .container{max-width:1000px;margin:36px auto;padding:28px;}
   header{display:flex;gap:20px;align-items:center}
-  .avatar{width:110px;height:110px;border-radius:12px;overflow:hidden;flex:0 0 110px;border:2px solid rgba(255,255,255,0.06);background:var(--glass)}
+  /* avatar: circular and larger */
+  .avatar{
+    width:150px;
+    height:150px;
+    border-radius:50%;
+    overflow:hidden;
+    flex:0 0 150px;
+    border:2px solid rgba(255,255,255,0.06);
+    background:var(--glass);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
   .avatar img{width:100%;height:100%;object-fit:cover;display:block}
-  .intro h1{margin:0;font-size:28px}
+  .intro h1{margin:0;font-size:32px}
   .intro p.role{margin:6px 0 14px;color:var(--accent);font-weight:600}
   .intro p.blurb{color:var(--muted);margin:0;max-width:72ch;line-height:1.5}
   .btn-contact{display:inline-block;margin-top:12px;padding:8px 14px;border-radius:10px;background:linear-gradient(90deg,var(--accent),#60a5fa);color:#032033;text-decoration:none;font-weight:700}
@@ -120,7 +132,9 @@
   @media (max-width:700px){
     header{flex-direction:row; align-items:flex-start}
     .intro p.blurb{font-size:14px}
-    .avatar{width:86px;height:86px;flex:0 0 86px}
+    /* mobile: smaller circular avatar */
+    .avatar{width:100px;height:100px;flex:0 0 100px;border-radius:50%}
+    .intro h1{font-size:22px}
   }
 
   /* section background tints */
@@ -133,7 +147,7 @@
 <body>
   <div class="container">
     <header>
-      <div class="avatar"><img src="profile.jpg" alt="Profile"></div>
+      <div class="avatar"><img src="profile.jpg" alt="Soumen Koley — profile photo"></div>
       <div class="intro">
         <h1>SOUMEN KOLEY</h1>
         <p class="role">Game Dev | Unity | C# | Multiplayer | AI/ML | AR/VR | RMG</p>
